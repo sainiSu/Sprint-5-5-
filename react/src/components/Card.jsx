@@ -1,15 +1,28 @@
-export default function Card({ data }) {
 
+export default function Card({ data , handleStep}) {
+
+    function handleClick(){
+        handleStep()
+    }
 
 
   return (
-    <div>
+    <div className="card">
+       
+       <div className="card-header">
+        <img src={data.image} alt="" className="card-image" />
 
-        {data.title && <h2>{data.title}</h2>}
+       </div>
 
-        {data.description  && <p><strong>{data.description}</strong></p>}
+       <div className="card-body">
 
-      <button>Card-Displayer</button>
+        <h1 className="card-title">{data.title}</h1>
+        <p>{data.description}</p>
+
+       </div>
+
+      <button className="card-btn" onClick={ handleClick}>&#11166;</button>
+
     </div>
   )
 }
