@@ -22,10 +22,7 @@ function App() {
   return (
     <>
       <Card
-        step={step}
-        handleStep={addSteps}
-        handlePrevStep={prevStep}
-        data={tutorialData[step]}
+        step={step} handleStep={addSteps} handlePrevStep={prevStep} data={tutorialData[step]}
       ></Card>
     </>
   );

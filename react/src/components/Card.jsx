@@ -1,4 +1,4 @@
-export default function Card({ data, handleStep, handlePrevStep }) {
+export default function Card({ step, data, handleStep, handlePrevStep }) {
 
   return (
     <div className="card">
@@ -17,19 +17,21 @@ export default function Card({ data, handleStep, handlePrevStep }) {
       </div>
 
       <div className="buttons">
-        
+
         <div className="indicator">
 
           <ul>
-            <li>&#11044;</li>
-            <li>&#11044;</li>
-            <li>&#11044;</li>
+            <li>{step}</li>
           </ul>
         </div>
+        <div>
+          {step < 0 && (<button className="card-btn2" onClick={handlePrevStep}>&#11164;</button>)}
 
-        <button className="card-btn2" onClick={handlePrevStep}>&#11164;</button>
-        <button className="card-btn" onClick={handleStep}>&#11166;</button>
+          {step > 0 && (<button className="card-btn2" onClick={handlePrevStep}>&#11164;</button>)}
 
+          {step < 2 && (<button className="card-btn" onClick={handleStep}>&#11166;</button>)}
+
+        </div>
       </div>
     </div>
   );

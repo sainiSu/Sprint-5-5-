@@ -50,7 +50,9 @@ img.card-image{
 
 .indicator{
     display: flex;
+    justify-content: end;
     align-items: baseline;
+
 }
 .indicator ul {
     list-style-type: none;
